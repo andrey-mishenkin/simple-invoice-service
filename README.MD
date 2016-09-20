@@ -99,7 +99,7 @@ Known issues
 Things TODO
 ============
 * Fix issues.
-* Add addtitional monitoring/statistic to main Invoice tax service - processing time, derive meteric for items processed/errors per second.
+* Add addtitional monitoring/statistic to main Invoice tax service - processing time, derive meteric for items processed/errors.
 * Stop use spring application-context.xml.
 * Add more details for `http-traffic.log` - full content of HTTP request/response 
 * Add service for Tax Rate configuration change via REST.
