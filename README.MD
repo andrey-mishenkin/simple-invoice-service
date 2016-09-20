@@ -107,6 +107,6 @@ Things TODO
 * Tune separation of `dev` and `prod` environments (app port, host & etc.).
 * Tune JVM options and Tomcat options for prod.
 * Clarify with monitoring: Jersey via JMX or Spring Boot.
-* Develop agent for some monitoring tool (Zabix, Graphite) to provide monitoring charts: Server QPS, HTTP Errors stat, Request/Response latency percentilies, Invice Service processing stat, CPU, Memory, System Load & etc.
+* Develop agent for some monitoring tool (Zabix, Graphite) to provide monitoring charts: Server QPS, HTTP Errors stat, Request/Response latency percentilies, Invoice Service processing stat, CPU, Memory, System Load & etc.
 * Add [Swagger UI](http://swagger.io/) for REST API doc.
 * Make app [Dockable](http://docker.com).
