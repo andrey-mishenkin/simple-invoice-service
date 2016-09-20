@@ -16,7 +16,7 @@ or using spring-boot:ru
 The base app dir (`BASE_DIR`) for `dev` environment is `./target` for `prod` - `./` (current dir).
 
 Description
-============
+===========
 Exposed API can be explored via `http://localhost:8080/invoice-service/api/v1/application.wadl`.
 Here is the list of services 
 
