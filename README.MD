@@ -17,7 +17,7 @@ The base app dir (`BASE_DIR`) for `dev` envirinment is `./target` for `prod` - `
 
 Description
 ============
-Exposed API can be exploried via [http://localhost:8080/invoice-service/api/v1/application.wadl]
+Exposed API can be exploried via http://localhost:8080/invoice-service/api/v1/application.wadl.
 Here is the list of services 
 
 Path |  Method | Description
