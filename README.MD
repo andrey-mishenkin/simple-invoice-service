@@ -92,17 +92,19 @@ For example `http://localhost:8080/invoice-service/system/metrics`
 Known issues
 ============
 * Output for `http-traffic.log` and `invoice-tax-stat.log` written to console and invoice-service-system.log - it should not.
-* Jersy JMX monitoring doesn't exposed
+* Jersy JMX monitoring doesn't exposed.
 
 Things TODO
 ============
 * Fix issues.
 * Add addtitional monitoring/statistic to main Invoice tax service - processing time, derive meteric for items processed/errors per second.
+* Stop use spring application-context.xml.
 * Add more details for `http-traffic.log` - full content of HTTP request/response 
 * Add service for Tax Rate configuration change via REST.
 * Add service for application configuration read/change: traffic log on/off, invioce service stat details.
 * Tune separation of `dev` and `prod` environments (app port, host & etc.).
 * Tune JVM options and Tomcat options for prod.
+* Clarify with monitoring: Jersey via JMX or Spring Boot.
 * Develop agent for some monitoring tool (Zabix, Graphite) to provide monitoring charts: Server QPS, HTTP Errors stat, Request/Response latency percentilies, Invice Service processing stat, CPU, Memory, System Load & etc.
 * Add [Swagger UI](http://swagger.io/) for REST API doc.
 * Make app [Dockable](http://docker.com).
