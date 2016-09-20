@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="LOG_PATH" value="./target/logs" />
+    <property name="LOG_FILE" value="./target/invoice-service-system.log" />
+    <springProfile name="prod">
+        <property name="LOG_PATH" value="./logs" />
+        <property name="LOG_FILE" value="./invoice-service-system.log" />
+    </springProfile>    
+    
+    <property name="INVOICE_STAT_LOG_NAME" value="invoice-tax-stat" />
+    <property name="TRAFFIC_LOG_NAME" value="http-traffic" />
+
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <appender name="invoiceTaxStatAppender"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${INVOICE_STAT_LOG_NAME}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+            </Pattern>
+        </encoder>
+
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${LOG_PATH}/${INVOICE_STAT_LOG_NAME}.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="trafficAppender"
+        class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${TRAFFIC_LOG_NAME}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} - %msg%n
+            </Pattern>
+        </encoder>
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${LOG_PATH}/${TRAFFIC_LOG_NAME}.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="invoiceTaxStatLogger">
+        <appender-ref ref="invoiceTaxStatAppender" />
+    </logger>
+
+    <logger name="trafficLogger">
+        <appender-ref ref="trafficAppender" />
+    </logger>
+
+    <springProfile name="dev"> 
+        <logger name="com.invoiceservice" level="DEBUG" />
+        <appender-ref ref="CONSOLE" />
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="com.invoiceservice" level="INFO" />
+        <appender-ref ref="FILE" />
+        <appender-ref ref="trafficAppender" />
+        <appender-ref ref="invoiceTaxStatAppender" />
+    </springProfile>
+
+</configuration>
