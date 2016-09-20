@@ -17,7 +17,7 @@ The base app dir (`BASE_DIR`) for `dev` envirinment is `./target` for `prod` - `
 
 Description
 ============
-Exposed API can be exploried via http://localhost:8080/invoice-service/api/v1/application.wadl.
+Exposed API can be exploried via `http://localhost:8080/invoice-service/api/v1/application.wadl`.
 Here is the list of services 
 
 Path |  Method | Description
@@ -87,7 +87,7 @@ Invioce service processing stat log: BASE_DIR/logs/invoice-tax-stat.log
 ### Monitoring and Metrics 
 Except of app own `api/v1/health` monitoring there are additional monitoring and metrics avalable out of the box. 
 [Spring Boot Production Ready](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) endpoints exposed on `http://localhost:8080/invoice-service/system`.
-For example http://localhost:8080/invoice-service/system/metrics
+For example `http://localhost:8080/invoice-service/system/metrics`
 
 Known issues
 ============
