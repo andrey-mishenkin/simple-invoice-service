@@ -13,20 +13,20 @@ and run
 or using spring-boot:ru
 > mvn clean spring-boot:run
 
-The base app dir (`BASE_DIR`) for `dev` envirinment is `./target` for `prod` - `./` (current dir).
+The base app dir (`BASE_DIR`) for `dev` environment is `./target` for `prod` - `./` (current dir).
 
 Description
 ============
-Exposed API can be exploried via `http://localhost:8080/invoice-service/api/v1/application.wadl`.
+Exposed API can be explored via `http://localhost:8080/invoice-service/api/v1/application.wadl`.
 Here is the list of services 
 
 Path |  Method | Description
 ------------ | ----------------- | -------------
-invoice/taxitems | POST | Tax rates per tax category are stored in the static configuration (JSON). The service takes each invoice item from the invoice, calculates tax amount according to the item's tax category and updates the item's totalAmount value. Finally, the same invoice after tax calculation (i.e. with updated totalAmount's) is returned to the client. Also error status and error details (if any) returned. See example of request/resposne data structure (JSON).
-category/taxrates | GET | Return tax rate per category configuraion 
-health | GET | Rerurn system health status in simple form as OK|WARNING|ERROR.
-health/detail | GET | Rerurn detailed system health status by service.
-health/detail/json | GET | Rerurn detailed system health status by service in JSON format.
+invoice/taxitems | POST | Tax rates per tax category are stored in the static configuration (JSON). The service takes each invoice item from the invoice, calculates tax amount according to the item's tax category and updates the item's totalAmount value. Finally, the same invoice after tax calculation (i.e. with updated totalAmount's) is returned to the client. Also error status and error details (if any) returned. See example of request/response data structure (JSON).
+category/taxrates | GET | Return tax rate per category configuration 
+health | GET | Return system health status in simple form as OK|WARNING|ERROR.
+health/detail | GET | Return detailed system health status by service.
+health/detail/json | GET | Return detailed system health status by service in JSON format.
 
 invoice/taxitems Request example:
 ```
@@ -84,10 +84,10 @@ Application system log: `BASE_DIR/invoice-service-system.log`
 
 HTTP detail traffic log: `BASE_DIR/logs/http-traffic.log`
 
-Invioce service processing stat log: `BASE_DIR/logs/invoice-tax-stat.log`
+Invoice service processing stat log: `BASE_DIR/logs/invoice-tax-stat.log`
 
 ### Monitoring and Metrics 
-Except of app own `api/v1/health` monitoring there are additional monitoring and metrics avalable out of the box. 
+Except of app own `api/v1/health` monitoring there are additional monitoring and metrics available out of the box. 
 [Spring Boot Production Ready](http://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) endpoints exposed on `http://localhost:8080/invoice-service/system`.
 For example `http://localhost:8080/invoice-service/system/metrics`
 
@@ -99,7 +99,7 @@ Known issues
 Things TODO
 ============
 * Fix issues.
-* Add addtitional monitoring/statistic to main Invoice tax service - processing time, derive meteric for items processed/errors.
+* Add additional monitoring/statistic to main Invoice tax service - processing time, derive meteric for items processed/errors.
 * Stop use spring application-context.xml.
 * Add more details for `http-traffic.log` - full content of HTTP request/response 
 * Add service for Tax Rate configuration change via REST.
@@ -107,6 +107,6 @@ Things TODO
 * Tune separation of `dev` and `prod` environments (app port, host & etc.).
 * Tune JVM options and Tomcat options for prod.
 * Clarify with monitoring: Jersey via JMX or Spring Boot.
-* Develop agent for some monitoring tool (Zabix, Graphite) to provide monitoring charts: Server QPS, HTTP Errors stat, Request/Response latency percentilies, Invoice Service processing stat, CPU, Memory, System Load & etc.
+* Develop agent for some monitoring tool (Zabix, Graphite) to provide monitoring charts: Server QPS, HTTP Errors stat, Request/Response latency percentiles, Invoice Service processing stat, CPU, Memory, System Load & etc.
 * Add [Swagger UI](http://swagger.io/) for REST API doc.
 * Make app [Dockable](http://docker.com).
