@@ -19,6 +19,7 @@ Description
 ============
 Exposed API can be exploried via http://localhost:8080/invoice-service/api/v1/application.wadl
 Here is the list of services 
+
 Path |  Method | Description
 ------------ | ----------------- | -------------
 invoice/taxitems | POST | Tax rates per tax category are stored in the static configuration (JSON). The service takes each invoice item from the invoice, calculates tax amount according to the item's tax category and updates the item's totalAmount value. Finally, the same invoice after tax calculation (i.e. with updated totalAmount's) is returned to the client. Also error status and error details (if any) returned. See example of request/resposne data structure (JSON).
