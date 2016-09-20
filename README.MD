@@ -81,7 +81,9 @@ Tax rates by category configuration file located in `BASE_DIR/conf/category-rate
 Created if doesn't exists, pulled every 5 minutes for update. 
 ### Logs
 Application system log: `BASE_DIR/invoice-service-system.log`
+
 HTTP detail traffic log: `BASE_DIR/logs/http-traffic.log`
+
 Invioce service processing stat log: `BASE_DIR/logs/invoice-tax-stat.log`
 
 ### Monitoring and Metrics 
