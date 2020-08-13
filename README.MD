@@ -1,5 +1,7 @@
 Simple Invoice Service Web Application
 ======================================
+The task was a part of interview process assignment.
+
 This a simple application that modeling an online taxation service. The exposes a RESTful HTTP API that accepts the invoice document, calculates taxes for it and returns the updated document back to the caller.
 
 Build and Run
