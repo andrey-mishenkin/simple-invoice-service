@@ -112,3 +112,8 @@ Things TODO
 * Develop agent for some monitoring tool (Zabix, Graphite) to provide monitoring charts: Server QPS, HTTP Errors stat, Request/Response latency percentiles, Invoice Service processing stat, CPU, Memory, System Load & etc.
 * Add [Swagger UI](http://swagger.io/) for REST API doc.
 * Make app [Dockable](http://docker.com).
+
+Effort
+============
+I spend about 20 hours of hard working for the project.
+Mostly for learning new framworks and tools ;)
