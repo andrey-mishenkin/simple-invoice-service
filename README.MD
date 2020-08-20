@@ -115,5 +115,4 @@ Things TODO
 
 Effort
 ============
-I spend about 20 hours of hard working for the project.
-Mostly for learning new framworks and tools ;)
+I spend about 20 hours of hard-working on the project. Mostly for learning new frameworks and tools ;)
